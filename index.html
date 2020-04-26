@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <link href="https://fonts.googleapis.com/css?family=Bangers|Indie+Flower|Zhi+Mang+Xing&display=swap" rel="stylesheet">
+          <title>Wall Clock</title>
+</head>
+<style>
+          body{
+                    background:rgb(247, 232, 221)
+          }
+          .dailer{
+                    width:500px;
+                    height:500px;
+                    /* border:1px solid black;     */
+                    border-radius:50%;
+                    position:absolute;   
+                    left:27%;
+                    top:5%;
+          }
+          .sec
+          {
+                    width:250px;
+                    height:1px;
+                    /* background:red; */
+                    position: relative;
+                    top:50%;
+                    transform-origin:100% ;
+                    /* left:%;     */
+          }
+          .min{
+                    width:185px;
+                    height:5px;
+                    background:black;
+                    position: relative;
+                    transform-origin:100% ;
+                    top:50%;
+                    left:13%
+          }
+          .hrs{
+                    width:130px;
+                    height:4px;
+                    background:black;
+                    position: relative;
+                    transform-origin:100% ;
+                    top:50%;
+                    left:24%
+          }
+          .div1
+          {
+                    width:85px;
+                    border-radius:9%;
+                    height:80px;
+                    background:black;
+                    color:rgb(247, 232, 221);
+                    font-size:33px;
+                    position: relative;
+                    top:-14%;
+                    left:40.4%;
+          }
+          .div1 h1{
+                    padding-left:6px;
+                    padding-top:5%;
+                    font-family: 'Bangers', cursive;
+          }
+          .h1
+          {
+                color:black;
+                font-family: 'Indie Flower', cursive;
+                font-size:80px;
+                position: relative;
+                top:-43%;
+                left:12%;
+          }
+          .h2
+          {
+                color:black;
+                font-family: 'Indie Flower', cursive;
+                font-size:70px;
+                position: relative;
+                top:-57%;
+                left:-7%;
+          }
+          .div2{
+                    width:66px;
+                    border-radius:9%;
+                    height:95px;
+                    background:black;
+                    color:rgb(247, 232, 221);
+                    font-size:37px;
+                    position: relative;
+                    top:-62%;
+                    left:-10%;
+          }
+          .div2 h1{
+                    padding-top:-30%;
+                    padding-left:15%;
+                    font-family: 'Bowlby One SC', cursive;
+          }
+          .h3
+          {
+                   color:black;
+                   font-family: 'Bangers', cursive;
+                   font-size:75px;
+                   position: relative;
+                   top:-62%;
+                   left:-4%;
+          }
+          .h4{
+                    color:black;
+                    font-size:60px;
+                    position: relative;
+                    top:-69%;
+                    left:9%;
+                    
+          }
+          .h5{
+                    font-family: 'Zhi Mang Xing', cursive;
+                    top:-85%;
+                    position: relative;
+                    font-size:85px;
+                    left:43%;
+          }
+          .h6{
+                  position:relative;
+                  top:-124%;
+                  left:76%;
+                  font-size:75px;
+                  font-weight:lighter;
+                  font-family: 'Bowlby One SC', cursive;
+          }
+          .div3{
+                position:relative;
+                top:-176%;
+                left:96%;
+                color:rgb(247, 232, 221);
+                font-size:32px;
+                border-radius:10px;
+                width:70px;
+                height:80px;
+                background:black; 
+          }
+          .div3 h1{
+padding-left:15px;
+padding-top:6px;
+          }
+          .h7{
+                font-size: 70px;
+                position: relative;
+                top:-230%;
+                left:96%;
+                font-weight: lighter;
+                font-family: 'Bowlby One SC', cursive;
+          }
+          .h8{
+            font-family: 'Bangers', cursive;
+            font-size: 70px;
+                position: relative;
+                top:-281%;
+                left:94%;
+                font-weight: lighter;
+          }
+          .h9{
+            font-family: 'Zhi Mang Xing', cursive;
+                    top:-328%;
+                    position: relative;
+                    font-size:85px;
+                    left:75%;
+                    font-weight: lighter;
+
+          }
+</style>
+
+<body>
+          <div class="dailer">
+             <div class="needle sec"></div>
+             <div class="needle min"></div>
+             <div class="needle hrs"></div>
+    <div class="div1">
+              <h1 >1 2</h1>
+    </div>
+    <h1 class="h1">11</h1>
+    <h1 class="h2">ten</h1>
+     <div class="div2">
+               <h1>9</h1>
+     </div>
+     <h1 class="h3">8</h1>
+     <h1 class="h4">VII</h1>
+     <h1 class="h5">six</h1>
+     <h1 class="h6">5</h1>
+     <div class="div3">
+<h1>4</h1>
+     </div>
+     <h1 class="h7">III</h1>
+     <h1 class="h8">2</h1>
+     <h1 class="h9">one</h1>
+          </div>
+          <script>
+                    setInterval(clock, 1000)
+                    function clock(){
+                    var date = new Date()
+                    var sec1 = document.querySelector(".sec")          
+                    var sec2 = date.getSeconds()
+                    var sec3 = ((sec2/60)*360)+90
+                    sec1.style.transform=`rotate(${sec3}deg)`
+
+                    var min1 = document.querySelector('.min')
+                    var min2 = date.getMinutes()
+                    var min3 = ((min2/60)*360)+90
+                    min1.style.transform=`rotate(${min3}deg)`
+                     
+                    var hrs1 =document.querySelector(".hrs")
+                    var hrs2 = date.getHours()
+                    var hrs3 = ((hrs2/12)*360)+90+(.5*min2);
+                    hrs1.style.transform=`rotate(${hrs3}deg)`
+                    }
+          </script>
+</body>
+</html>
